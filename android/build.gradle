@@ -17,7 +17,8 @@ android {
         }
     }
     */
-    compileSdkVersion appAndroidCompileSDK
+    //compileSdkVersion appAndroidCompileSDK
+    compileSdkVersion 33
     compileOptions.sourceCompatibility = compileOptions.targetCompatibility = appJavaCompatibility
 
     sourceSets.main.assets.srcDirs = [new File(project(':core').projectDir, "/src/main/assets")]
@@ -30,8 +31,8 @@ android {
         versionName appVersionName
 
         //noinspection MinSdkTooLow
-        minSdkVersion appAndroidMinSDK
-        targetSdkVersion appAndroidTargetSDK
+        minSdkVersion 33//appAndroidMinSDK
+        targetSdkVersion 33//appAndroidTargetSDK
         resourceConfigurations += ['en_US', 'zh_CN']
         resConfigs 'en_US'
 
