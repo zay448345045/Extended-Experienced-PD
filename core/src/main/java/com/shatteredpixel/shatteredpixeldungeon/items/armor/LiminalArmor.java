@@ -27,50 +27,38 @@
  *
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.potions.elixirs;
+package com.shatteredpixel.shatteredpixeldungeon.items.armor;
 
+import static com.shatteredpixel.shatteredpixeldungeon.Dungeon.hero;
+
+import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
+import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Barrier;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.FrostImbue;
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.SnowParticle;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.AlchemicalCatalyst;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.PotionOfSnapFreeze;
+import com.shatteredpixel.shatteredpixeldungeon.items.Item;
+import com.shatteredpixel.shatteredpixeldungeon.items.rings.RingOfMight;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
 
-public class ElixirOfIcyTouch extends Elixir {
-	
+public class LiminalArmor extends Armor {
+
 	{
-		image = ItemSpriteSheet.ELIXIR_ICY;
+		image = ItemSpriteSheet.ARMOR_LIMINAL;
 	}
-	
+
+	public LiminalArmor() {
+		super( 6 );
+	}
+
 	@Override
-	public void apply(Hero hero) {
-		Buff.affect(hero, FrostImbue.class, 75f);
-		hero.sprite.emitter().burst(SnowParticle.FACTORY, 5);
-	}
-	
-	@Override
-	protected int splashColor() {
-		return 0xFF18C3E6;
-	}
-	
-	@Override
-	public long value() {
-		//prices of ingredients
-		return quantity * (50 + 40);
-	}
-	
-	public static class Recipe extends com.shatteredpixel.shatteredpixeldungeon.items.Recipe.SimpleRecipe {
-		
-		{
-			inputs =  new Class[]{PotionOfSnapFreeze.class, AlchemicalCatalyst.class};
-			inQuantity = new int[]{1, 1};
-			
-			cost = 6;
-			
-			output = ElixirOfIcyTouch.class;
-			outQuantity = 1;
+	public Item upgrade() {
+		hero.earnExp((long) Math.pow(2L * hero.lvl, 1.2d), LiminalArmor.class);
+		hero.HT *= 1.02d;
+		if (hero.buff(Barrier.class) != null) {
+			Buff.affect(hero, Barrier.class).incShield(20L * hero.lvl);
+		} else {
+			Buff.affect(hero, Barrier.class).setShield(20L * hero.lvl);
 		}
-		
+		hero.updateHT(false);
+		return this;
 	}
 }

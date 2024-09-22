@@ -53,6 +53,7 @@ import com.shatteredpixel.shatteredpixeldungeon.items.*;
 import com.shatteredpixel.shatteredpixeldungeon.items.Heap.Type;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.ClassArmor;
+import com.shatteredpixel.shatteredpixeldungeon.items.armor.LiminalArmor;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.AntiMagic;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Brimstone;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Viscosity;
@@ -134,6 +135,7 @@ import com.watabou.utils.Random;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.Objects;
 
 public class Hero extends Char {
 
@@ -240,6 +242,7 @@ public class Hero extends Char {
 		if (SPDSettings.healthMod() > 1) {
 			HP = HT *= SPDSettings.healthMod();
 		}
+
 		HP = Math.min(HP, HT);
 	}
 
@@ -1990,7 +1993,7 @@ public class Hero extends Char {
 	}
 	
 	public static long maxExp( long lvl ){
-		long max = (long) Math.pow(10L + (lvl * 8L),1.5d);
+		long max = (long) Math.pow(7L + (lvl * 4L),1.25d);
 		if (hero != null && hero.belongings.getItem(TotemOfArgumentation.class) != null) max *= 0.9f;
 		return max;
 	}

@@ -233,15 +233,15 @@ public class Generator {
 
 
     public enum Category {
-		WEAPON	( 3, 1, MeleeWeapon.class),
+		WEAPON	( 2, 1, MeleeWeapon.class),
 		WEP_T1	( 0, 0, MeleeWeapon.class),
 		WEP_T2	( 0, 0, MeleeWeapon.class),
 		WEP_T3	( 0, 0, MeleeWeapon.class),
 		WEP_T4	( 0, 0, MeleeWeapon.class),
 		WEP_T5	( 0, 0, MeleeWeapon.class),
 		WEP_JJBALI	( 0, 1, MeleeWeapon.class),
-		ARMOR	( 2, 1, Armor.class ),
-		MISSILE ( 1, 2, MissileWeapon.class ),
+		ARMOR	( 1, 1, Armor.class ),
+		MISSILE ( 2, 2, MissileWeapon.class ),
 		MIS_T1  ( 0, 0, MissileWeapon.class ),
 		MIS_T2  ( 0, 0, MissileWeapon.class ),
 		MIS_T3  ( 0, 0, MissileWeapon.class ),
@@ -250,13 +250,13 @@ public class Generator {
 		WAND	( 1, 1, Wand.class ),
 		RING	( 1, 0, Ring.class ),
 		ARTIFACT( 0, 1, Artifact.class),
-		FOOD	( 1, 0, Food.class ),
+		FOOD	( 3, 0, Food.class ),
 		POTION	( 8, 8, Potion.class ),
 		TUBES (0, 1, Tubes.class),
 		SEED	( 1, 1, Plant.Seed.class ),
 		
 		SCROLL	( 8, 8, Scroll.class ),
-		STONE   ( 1, 1, Runestone.class),
+		STONE   ( 2, 1, Runestone.class),
 		TREASUREBAG(0, 0, TreasureBag.class),
 		EXPOTION(0, 0, ExoticPotion.class),
 		EXSCROLL(0, 0, ExoticScroll.class),
@@ -719,13 +719,14 @@ public class Generator {
 					MailArmor.class,
 					ScaleArmor.class,
 					PlateArmor.class,
+					LiminalArmor.class,
 					WarriorArmor.class,
 					MageArmor.class,
 					RogueArmor.class,
 					HuntressArmor.class,
 					DuelistArmor.class
 			};
-			ARMOR.probs = new float[]{ 1, 1, 1, 1, 1, 0, 0, 0, 0, 0 };
+			ARMOR.probs = new float[]{ 8, 6, 5, 3, 2, 1, 0, 0, 0, 0, 0 };
 			
 			//see Generator.randomMissile
 			MISSILE.classes = new Class<?>[]{};

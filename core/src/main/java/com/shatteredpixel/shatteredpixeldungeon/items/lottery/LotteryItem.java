@@ -53,7 +53,7 @@ public class LotteryItem extends Item {
     }
 
     private static final String AC_ANSWER = "ANSWER";
-    private String ANSWER = String.valueOf(Math.round((Random.Int(100) + 1) - Dungeon.hero.STR/30));
+    private String ANSWER = String.valueOf(Math.round((Random.Int(100) + 1) - Math.round(Dungeon.hero.STR/30)));
 
     private static int[] generateLotteryNumbers() {
         int[] numbers = new int[4];
@@ -100,7 +100,7 @@ public class LotteryItem extends Item {
             public void onSelect( boolean positive, String text ) {
                 if (text.equals(ANSWER)) {
                     GLog.h("You guessed the number correctly.");
-                    ANSWER = String.valueOf(Math.round((Random.Int(100) + 1) - Dungeon.hero.STR/30));
+                    ANSWER = String.valueOf(Math.round((Random.Int(100) + 1) - Math.round(Dungeon.hero.STR/30)));
                     GameScene.flash(0xFF008000);
                     switch (Random.Int(8)) {
                         case 0:
@@ -157,7 +157,7 @@ public class LotteryItem extends Item {
                 } else {
                     GameScene.flash(0xFFFF0000);
                     GLog.w("The number is: " + ANSWER + ", try again.");
-                    ANSWER = String.valueOf(Math.round((Random.Int(100) + 1) - Dungeon.hero.STR/30));
+                    ANSWER = String.valueOf(Math.round((Random.Int(100) + 1) - Math.round(Dungeon.hero.STR/30)));
                 }
             }
 
