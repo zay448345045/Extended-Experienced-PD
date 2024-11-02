@@ -20,7 +20,7 @@ jobs:
     - name: set up JDK 
       uses: actions/setup-java@v4
       with:
-        java-version: '20'
+        java-version: '23'
      #   java-version: '22.0.2+9'
         distribution: 'temurin'
         cache: gradle
