@@ -1,5 +1,5 @@
 #!/bin/sh
-
+#hash:458805644272e15563d184eeb4eeb264adaf334ef44rl1hwfus4z96vn1cw
 #
 # Copyright © 2015-2021 the original authors.
 #
