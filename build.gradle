@@ -1,4 +1,3 @@
-
 buildscript {
     repositories {
         maven { url 'https://jitpack.io'}
@@ -41,3 +40,15 @@ allprojects {
     }
 
 }
+/*
+subprojects {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs.addAll([
+                '--add-exports',
+                'java.base/sun.net.www.protocol.file=ALL-UNNAMED',
+                'jdk.internal.le/jdk.internal.org.jline.utils=ALL-UNNAMED',
+                'jdk.internal.vm.ci/jdk.vm.ci.code.site=ALL-UNNAMED'
+        ])
+    }
+}
+*/
