@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
 compileSdk 35
-    namespace 'com.jjbali.experiencedpixeldungeon.extended'
+    namespace 'com.shatteredpixel.shatteredpixeldungeon.android'
 /*    signingConfigs {
         debug {
             storeFile file('F:\\extended-experienced-pixel-dungeon.jks')
