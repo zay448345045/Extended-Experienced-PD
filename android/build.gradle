@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace 'com.shatteredpixel.shatteredpixeldungeon.android'
+    namespace 'com.jjbali.experiencedpixeldungeon.extended'
 /*    signingConfigs {
         debug {
             storeFile file('F:\\extended-experienced-pixel-dungeon.jks')
@@ -33,7 +33,7 @@ android {
         //noinspection MinSdkTooLow
         minSdkVersion appAndroidMinSDK//33//appAndroidMinSDK
         targetSdkVersion appAndroidTargetSDK//33//appAndroidTargetSDK
-        resourceConfigurations += ['en_US', 'zh_CN']
+        resourceConfigurations += ['en_US', 'zh_CN','zh']
         resConfigs 'en_US', "zh", "nl", "uk", "vi", "el"
 
     }
