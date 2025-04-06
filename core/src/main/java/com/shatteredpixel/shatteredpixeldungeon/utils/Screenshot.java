@@ -15,7 +15,7 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.zip.Deflater;
 
-import jdk.internal.org.jline.utils.Display;
+//import jdk.internal.org.jline.utils.Display;
 
 
 public class Screenshot {
