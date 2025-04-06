@@ -17,6 +17,12 @@ android {
         }
     }
     */
+compileOptions {
+compilerArgs += [
+            '--add-exports',
+            'java.base/sun.net.www.protocol.file=ALL-UNNAMED' // 允许所有未命名模块访问
+        ]
+}
     compileSdkVersion appAndroidCompileSDK
 //    compileSdkVersion 33
     compileOptions.sourceCompatibility = compileOptions.targetCompatibility = appJavaCompatibility
