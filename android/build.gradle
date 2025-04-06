@@ -46,12 +46,14 @@ compilerArgs += [
         resConfigs 'en_US', "zh", "nl", "uk", "vi", "el"
 
     }
+/*
 tasks.withType(JavaCompile) {
     options.compilerArgs.addAll([
             '--add-exports',
             'java.base/sun.net.www.protocol.file=ALL-UNNAMED'
     ])
 }
+*/
     buildTypes {
         debug {
             applicationIdSuffix ".indev"
