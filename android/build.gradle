@@ -104,6 +104,7 @@ dependencies {
     natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
     implementation "com.badlogicgames.gdx-controllers:gdx-controllers-android:2.2.3"
     implementation "com.github.RohitSurwase.UCE-Handler:uce_handler:1.4"
+    implementation 'cat.ereza:customactivityoncrash:2.4.0'
 }
 
 // called every time gradle gets executed, takes the native dependencies of
