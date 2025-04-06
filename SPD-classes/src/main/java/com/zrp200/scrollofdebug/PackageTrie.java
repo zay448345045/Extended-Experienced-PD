@@ -56,6 +56,7 @@ public class PackageTrie {
      * fixme/todo This is not used for #findClass because it stops at first match. If it returned a list it would work, probably.
      * fixme this (and #findClass) do not handle duplicated results well at all. This isn't an issue for me, but it COULD be an issue.
      **/
+/*
     public PackageTrie findPackage(String name) {
         return findPackage(name.split("\\."), 0);
     }
@@ -150,6 +151,7 @@ public class PackageTrie {
      * @throws ClassNotFoundException
      *             if something went wrong
      */
+/*
     public static PackageTrie getClassesForPackage(String pckgname)
             throws ClassNotFoundException {
         PackageTrie root = new PackageTrie();
@@ -240,13 +242,15 @@ public class PackageTrie {
 
             name = name.substring(0, index)
                     .replace('/', '.');
-            if (name.contains(pckgname) /*&& canInstantiate(cls = Class.forName(name))*/) {
+            if (name.contains(pckgname) /*&& canInstantiate(cls = Class.forName(name))*/
+/*) {
                 tree.addClass(Class.forName(name),pckgname);
             }
         }
     }
 }
 */
+    
 package com.zrp200.scrollofdebug;
 
 import static java.util.Collections.*;
