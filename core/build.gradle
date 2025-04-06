@@ -2,14 +2,14 @@ apply plugin: 'java-library'
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 sourceCompatibility = targetCompatibility = appJavaCompatibility
-
+/*
 tasks.withType(JavaCompile) {
     options.compilerArgs.addAll([
             'jdk.internal.le/jdk.internal.org.jline.utils=ALL-UNNAMED',
             'jdk.internal.vm.ci/jdk.vm.ci.code.site=ALL-UNNAMED'
     ])
 }
-
+*/
 dependencies {
     api project(':SPD-classes')
     implementation project(':services')
