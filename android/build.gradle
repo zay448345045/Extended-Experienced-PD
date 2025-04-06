@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+compileSdk 35
     namespace 'com.jjbali.experiencedpixeldungeon.extended'
 /*    signingConfigs {
         debug {
@@ -17,12 +18,14 @@ android {
         }
     }
     */
+/*
 compileOptions {
 compilerArgs += [
             '--add-exports',
             'java.base/sun.net.www.protocol.file=ALL-UNNAMED' // 允许所有未命名模块访问
         ]
 }
+*/
     compileSdkVersion appAndroidCompileSDK
 //    compileSdkVersion 33
     compileOptions.sourceCompatibility = compileOptions.targetCompatibility = appJavaCompatibility
@@ -43,7 +46,12 @@ compilerArgs += [
         resConfigs 'en_US', "zh", "nl", "uk", "vi", "el"
 
     }
-
+tasks.withType(JavaCompile) {
+    options.compilerArgs.addAll([
+            '--add-exports',
+            'java.base/sun.net.www.protocol.file=ALL-UNNAMED'
+    ])
+}
     buildTypes {
         debug {
             applicationIdSuffix ".indev"
