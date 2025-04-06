@@ -2,7 +2,7 @@ apply plugin: 'java-library'
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 sourceCompatibility = targetCompatibility = appJavaCompatibility
-
+/*
 tasks.withType(JavaCompile) {
     options.compilerArgs.addAll([
             '--add-exports',
@@ -14,7 +14,7 @@ tasks.withType(JavaCompile) {
 
     ])
 }
-
+*/
 dependencies {
     api "com.badlogicgames.gdx:gdx:$gdxVersion"
     api "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"
