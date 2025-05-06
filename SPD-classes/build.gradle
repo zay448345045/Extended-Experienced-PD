@@ -7,6 +7,11 @@ java {
     sourceCompatibility = appJavaCompatibility
     targetCompatibility = appJavaCompatibility
 }
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8' // 如果您之前移动了编码设置，它应该在这里
+    // 添加这个参数来允许访问 sun.net.www.protocol.file
+    options.compilerArgs << '--add-exports=java.base/sun.net.www.protocol.file=ALL-UNNAMED'
+}
 dependencies {
     api "com.badlogicgames.gdx:gdx:$gdxVersion"
     api "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"
