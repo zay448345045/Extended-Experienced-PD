@@ -1,9 +1,23 @@
 apply plugin: 'java-library'
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-sourceCompatibility = targetCompatibility = appJavaCompatibility
+//sourceCompatibility = targetCompatibility = appJavaCompatibility
+java {
+    // 在 java 块中设置 sourceCompatibility 和 targetCompatibility
+    sourceCompatibility = appJavaCompatibility
+    targetCompatibility = appJavaCompatibility
+}
+tasks.withType(JavaCompile) {
+    // 在这里设置 Java 编译任务的选项，包括编码
+    options.encoding = 'UTF-8'
+    // 您也可以在这里设置其他编译选项，例如 lint 等
+}
 
 dependencies {
     api project(':SPD-classes')
     implementation project(':services')
 }
+
+
+// 您需要确保 appJavaCompatibility 变量在某个地方被定义了，
+// 例如在项目的根 build.gradle 或者 gradle.properties 文件中
