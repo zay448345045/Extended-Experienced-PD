@@ -1,6 +1,7 @@
-include ':core', ':SPD-classes', ':android', ':desktop', ':services',
+include ':core', ':SPD-classes', ':android',  ':services',
         ':services:updates:githubUpdates',
         ':services:news:ingameNews'
+//':desktop',
 /*
 dependencyResolutionManagement {
    
