@@ -11,6 +11,9 @@ tasks.withType(JavaCompile) {
     // 在这里设置 Java 编译任务的选项，包括编码
     options.encoding = 'UTF-8'
     // 您也可以在这里设置其他编译选项，例如 lint 等
+options.compilerArgs << '--add-exports=jdk.internal.le/jdk.internal.org.jline.utils=ALL-UNNAMED'
+    options.compilerArgs << '--add-exports=jdk.internal.vm.ci/jdk.vm.ci.code.site=ALL-UNNAMED'
+
 }
 
 dependencies {
