@@ -21,7 +21,7 @@ allprojects {
         appVersionCode = 553
         appVersionName = 'EExpPD-10.6.0'
 
-        appJavaCompatibility = JavaVersion.VERSION_23
+        appJavaCompatibility = JavaVersion.VERSION_24
 
         appAndroidCompileSDK = 36
         appAndroidMinSDK = 28 //15
