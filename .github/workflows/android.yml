@@ -8,14 +8,14 @@ on:
   push:
     paths:
      - 'action.on' # 只有 特定 文件的更改才构建
-#    branches: [ "master" ]
-#  pull_request:
-#    branches: [ "master" ]
+    branches: [ "debug" ]
+  pull_request:
+    branches: [ "debug" ]
 
 jobs:
   build:
 
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
